@@ -1,0 +1,34 @@
+//
+//
+// Copyright © 2022 THALES. All rights reserved.
+//
+
+// MARK: Main
+"main_title" = "IdCloud Access";
+"username_label" = "Username";
+"username_textfield_placeholder" = "Enter your username";
+"register_button_title" = "Register Device";
+"sign_in_button_title" = "Sign In";
+"clear_logs_button_title" = "Clear Logs";
+"authentication_type_label" = "Authentication type";
+
+// MARK: Settings
+"settings_title" = "Settings";
+"settings_version_title" = "Version";
+"settings_general_title" = "General";
+"settings_showlogs_title" = "Show Logs";
+"settings_reset_title" = "Reset";
+
+// MARK: Protector FIDO
+"friendly_name_title" = "Friendly Name";
+"input_friendly_name_message" = "Input a friendly name";
+
+// MARK: Alert
+"alert_ok" = "OK";
+"alert_error_title" = "Error";
+"alert_success_msg" = "Success";
+
+// MARK: Authentication Type
+"authentication_type_risk" = "Risk-based";
+"authentication_type_silent" = "Silent";
+"authentication_type_strong" = "Strong";

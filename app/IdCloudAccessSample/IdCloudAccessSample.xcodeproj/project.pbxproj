@@ -1,0 +1,912 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0967DCDF625619B452348663 /* Pods_IdCloudAccessSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D9B4E93CC00AB8F82FDECF /* Pods_IdCloudAccessSample.framework */; };
+		0F07DD92D2B0B2E8B695807B /* Pods_IdCloudAccessSampleUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601056CF2E34BC0253F089E8 /* Pods_IdCloudAccessSampleUnitTests.framework */; };
+		D90390592910BAE20079759B /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90390582910BAE20079759B /* LoggerTests.swift */; };
+		D90390602910F6A60079759B /* SettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D903905F2910F6A60079759B /* SettingsTests.swift */; };
+		D90390622910FA4D0079759B /* IDCAErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90390612910FA4D0079759B /* IDCAErrorTests.swift */; };
+		D906CA15290B689600B14743 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D906CA14290B689600B14743 /* Settings.swift */; };
+		D91095F1290A3DFD009BE81D /* SCAClientConformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91095F0290A3DFD009BE81D /* SCAClientConformer.swift */; };
+		D9169FFE29103520001A9114 /* SecureLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9169FF72910351F001A9114 /* SecureLabel.swift */; };
+		D9169FFF29103520001A9114 /* ClientConformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9169FF82910351F001A9114 /* ClientConformer.swift */; };
+		D916A00129103520001A9114 /* LockoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9169FFC2910351F001A9114 /* LockoutViewController.swift */; };
+		D916A00229103520001A9114 /* PinPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9169FFD2910351F001A9114 /* PinPadViewController.swift */; };
+		D9388AB628FEF0FB0080505E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9388AB528FEF0FB0080505E /* AppDelegate.swift */; };
+		D9388ABF28FEF0FD0080505E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9388ABE28FEF0FD0080505E /* Assets.xcassets */; };
+		D9388AC228FEF0FD0080505E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9388AC028FEF0FD0080505E /* LaunchScreen.storyboard */; };
+		D9388AEE28FEF3330080505E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9388AED28FEF3330080505E /* MainViewController.swift */; };
+		D93BF758290B8738008DB1F2 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93BF757290B8738008DB1F2 /* UIAlertControllerExtension.swift */; };
+		D95A74372902F36400B9F966 /* UIColorSystemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95A74362902F36400B9F966 /* UIColorSystemExtension.swift */; };
+		D95A74392902F46C00B9F966 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D95A74382902F46C00B9F966 /* Localizable.strings */; };
+		D95A743B29041F6200B9F966 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95A743A29041F6200B9F966 /* SettingsViewController.swift */; };
+		D95A743F29042EDE00B9F966 /* UIControlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95A743E29042EDE00B9F966 /* UIControlExtension.swift */; };
+		D95A7443290573DE00B9F966 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95A7442290573DE00B9F966 /* Logger.swift */; };
+		D9726E0529250B6F0088E069 /* AuthenticationTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9726E0429250B6F0088E069 /* AuthenticationTypeTableViewController.swift */; };
+		D9726E0729250BC40088E069 /* AuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9726E0629250BC40088E069 /* AuthenticationType.swift */; };
+		D99C015329091DF200C6978C /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99C015229091DF200C6978C /* Configuration.swift */; };
+		D99C0157290922E400C6978C /* OIDCAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99C0156290922E400C6978C /* OIDCAgent.swift */; };
+		D99C01592909248E00C6978C /* IDCAUserAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99C01582909248E00C6978C /* IDCAUserAgent.swift */; };
+		D99C015B290924D500C6978C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99C015A290924D500C6978C /* WebViewController.swift */; };
+		D99C015D290927F300C6978C /* SCAAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99C015C290927F300C6978C /* SCAAgent.swift */; };
+		D9AE9A252923D538002DB40C /* EnrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE9A242923D538002DB40C /* EnrollView.swift */; };
+		D9AE9A272923DA55002DB40C /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE9A262923DA55002DB40C /* AuthenticationView.swift */; };
+		D9AE9A292923DB68002DB40C /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE9A282923DB68002DB40C /* LogView.swift */; };
+		D9CE14E82934AE6B000AEF0E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CE14E72934AE6B000AEF0E /* UIColorExtension.swift */; };
+		D9CE21812927B74A0052D56F /* libd1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CE21802927B74A0052D56F /* libd1.a */; };
+		D9E0F0892928BF8B00C38096 /* RiskAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E0F0882928BF8B00C38096 /* RiskAgent.swift */; };
+		D9F8EAC92910109400EE13D6 /* SecureLogAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F8EAC82910109400EE13D6 /* SecureLogAPI.framework */; };
+		D9F8EACA2910109C00EE13D6 /* IdCloudClient.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F8EAC62910108B00EE13D6 /* IdCloudClient.xcframework */; };
+		D9F8EACB2910109C00EE13D6 /* IdCloudClient.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9F8EAC62910108B00EE13D6 /* IdCloudClient.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D9FF2264290CC9C700775F0F /* IDCAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF2263290CC9C700775F0F /* IDCAError.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D954563F291E148B00D546F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9388AAA28FEF0FB0080505E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D9388AB128FEF0FB0080505E;
+			remoteInfo = IdCloudAccessSample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D9F8EACC2910109C00EE13D6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D9F8EACB2910109C00EE13D6 /* IdCloudClient.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		229DAC2BFD7D1780BED66095 /* Pods-IdCloudAccessSample-IdCloudAccessSampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdCloudAccessSample-IdCloudAccessSampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-IdCloudAccessSample-IdCloudAccessSampleUITests/Pods-IdCloudAccessSample-IdCloudAccessSampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3E87E908A8A0A4F2C1A97EEA /* Pods-IdCloudAccessSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdCloudAccessSample.release.xcconfig"; path = "Target Support Files/Pods-IdCloudAccessSample/Pods-IdCloudAccessSample.release.xcconfig"; sourceTree = "<group>"; };
+		41D9B4E93CC00AB8F82FDECF /* Pods_IdCloudAccessSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IdCloudAccessSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE867AFE7D50B4F2C6DCA6C /* Pods_IdCloudAccessSample_IdCloudAccessSampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IdCloudAccessSample_IdCloudAccessSampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AFB44808AF7D1804D775710 /* Pods-IdCloudAccessSampleUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdCloudAccessSampleUnitTests.release.xcconfig"; path = "Target Support Files/Pods-IdCloudAccessSampleUnitTests/Pods-IdCloudAccessSampleUnitTests.release.xcconfig"; sourceTree = "<group>"; };
+		601056CF2E34BC0253F089E8 /* Pods_IdCloudAccessSampleUnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IdCloudAccessSampleUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64E2CF3B74E910479E0A9AAD /* Pods-IdCloudAccessSample-IdCloudAccessSampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdCloudAccessSample-IdCloudAccessSampleUITests.release.xcconfig"; path = "Target Support Files/Pods-IdCloudAccessSample-IdCloudAccessSampleUITests/Pods-IdCloudAccessSample-IdCloudAccessSampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A9F45846A44323E3C1CEC614 /* Pods-IdCloudAccessSampleUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdCloudAccessSampleUnitTests.debug.xcconfig"; path = "Target Support Files/Pods-IdCloudAccessSampleUnitTests/Pods-IdCloudAccessSampleUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C02815535EF7962FC5E1A5E1 /* Pods-IdCloudAccessSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdCloudAccessSample.debug.xcconfig"; path = "Target Support Files/Pods-IdCloudAccessSample/Pods-IdCloudAccessSample.debug.xcconfig"; sourceTree = "<group>"; };
+		D90390582910BAE20079759B /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
+		D903905F2910F6A60079759B /* SettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTests.swift; sourceTree = "<group>"; };
+		D90390612910FA4D0079759B /* IDCAErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCAErrorTests.swift; sourceTree = "<group>"; };
+		D906CA14290B689600B14743 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		D91095F0290A3DFD009BE81D /* SCAClientConformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCAClientConformer.swift; sourceTree = "<group>"; };
+		D9169FF72910351F001A9114 /* SecureLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureLabel.swift; sourceTree = "<group>"; };
+		D9169FF82910351F001A9114 /* ClientConformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientConformer.swift; sourceTree = "<group>"; };
+		D9169FFC2910351F001A9114 /* LockoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockoutViewController.swift; sourceTree = "<group>"; };
+		D9169FFD2910351F001A9114 /* PinPadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinPadViewController.swift; sourceTree = "<group>"; };
+		D930ACFD2913570600EB59CA /* icam-unittest-target-debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "icam-unittest-target-debug.xcconfig"; sourceTree = "<group>"; };
+		D930ACFE2913571200EB59CA /* icam-unittest-target-release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "icam-unittest-target-release.xcconfig"; sourceTree = "<group>"; };
+		D9388AB228FEF0FB0080505E /* IdCloudAccessSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdCloudAccessSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9388AB528FEF0FB0080505E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D9388ABE28FEF0FD0080505E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D9388AC128FEF0FD0080505E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D9388AC328FEF0FD0080505E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9388AC828FEF0FD0080505E /* IdCloudAccessSampleUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IdCloudAccessSampleUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9388AE728FEF1FC0080505E /* icam-project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "icam-project.xcconfig"; sourceTree = "<group>"; };
+		D9388AE828FEF1FC0080505E /* icam-target-debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "icam-target-debug.xcconfig"; sourceTree = "<group>"; };
+		D9388AE928FEF1FC0080505E /* icam-target-release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "icam-target-release.xcconfig"; sourceTree = "<group>"; };
+		D9388AED28FEF3330080505E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D93BF757290B8738008DB1F2 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
+		D95A74362902F36400B9F966 /* UIColorSystemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorSystemExtension.swift; sourceTree = "<group>"; };
+		D95A74382902F46C00B9F966 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		D95A743A29041F6200B9F966 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D95A743E29042EDE00B9F966 /* UIControlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlExtension.swift; sourceTree = "<group>"; };
+		D95A7442290573DE00B9F966 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		D9726E0429250B6F0088E069 /* AuthenticationTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthenticationTypeTableViewController.swift; path = IdCloudAccessSample/vc/AuthenticationTypeTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		D9726E0629250BC40088E069 /* AuthenticationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationType.swift; sourceTree = "<group>"; };
+		D99C015229091DF200C6978C /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		D99C0156290922E400C6978C /* OIDCAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OIDCAgent.swift; sourceTree = "<group>"; };
+		D99C01582909248E00C6978C /* IDCAUserAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCAUserAgent.swift; sourceTree = "<group>"; };
+		D99C015A290924D500C6978C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		D99C015C290927F300C6978C /* SCAAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCAAgent.swift; sourceTree = "<group>"; };
+		D99C015E29092AC800C6978C /* IdCloudAccessSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IdCloudAccessSample-Bridging-Header.h"; sourceTree = "<group>"; };
+		D9AE9A242923D538002DB40C /* EnrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollView.swift; sourceTree = "<group>"; };
+		D9AE9A262923DA55002DB40C /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		D9AE9A282923DB68002DB40C /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
+		D9C52608290039FB00022D2C /* IdCloudAccessSampleUnitTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = IdCloudAccessSampleUnitTests.xctestplan; sourceTree = "<group>"; };
+		D9C52609290039FB00022D2C /* IdCloudAccessSampleUITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = IdCloudAccessSampleUITests.xctestplan; sourceTree = "<group>"; };
+		D9C5260A29003D3F00022D2C /* IdCloudAccessSampleTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = IdCloudAccessSampleTests.xctestplan; sourceTree = "<group>"; };
+		D9CE14E72934AE6B000AEF0E /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		D9CE14E92934B11B000AEF0E /* IdCloudAccessSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IdCloudAccessSample.entitlements; sourceTree = "<group>"; };
+		D9CE21802927B74A0052D56F /* libd1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libd1.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9E0F0882928BF8B00C38096 /* RiskAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskAgent.swift; sourceTree = "<group>"; };
+		D9F8EAC62910108B00EE13D6 /* IdCloudClient.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = IdCloudClient.xcframework; path = "dependency/idcloud-fido/IdCloudClient/$CONFIGURATION/IdCloudClient.xcframework"; sourceTree = "<group>"; };
+		D9F8EAC82910109400EE13D6 /* SecureLogAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SecureLogAPI.framework; path = "dependency/idcloud-fido/SecureLogAPI/$CONFIGURATION/SecureLogAPI.framework"; sourceTree = "<group>"; };
+		D9FF2263290CC9C700775F0F /* IDCAError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCAError.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D9388AAF28FEF0FB0080505E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9F8EACA2910109C00EE13D6 /* IdCloudClient.xcframework in Frameworks */,
+				D9F8EAC92910109400EE13D6 /* SecureLogAPI.framework in Frameworks */,
+				D9CE21812927B74A0052D56F /* libd1.a in Frameworks */,
+				0967DCDF625619B452348663 /* Pods_IdCloudAccessSample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9388AC528FEF0FD0080505E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F07DD92D2B0B2E8B695807B /* Pods_IdCloudAccessSampleUnitTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10A2151805F6D25950D4F300 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9CE21802927B74A0052D56F /* libd1.a */,
+				D9F8EAC82910109400EE13D6 /* SecureLogAPI.framework */,
+				D9F8EAC62910108B00EE13D6 /* IdCloudClient.xcframework */,
+				41D9B4E93CC00AB8F82FDECF /* Pods_IdCloudAccessSample.framework */,
+				4AE867AFE7D50B4F2C6DCA6C /* Pods_IdCloudAccessSample_IdCloudAccessSampleUITests.framework */,
+				601056CF2E34BC0253F089E8 /* Pods_IdCloudAccessSampleUnitTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D903905A2910BAFD0079759B /* util */ = {
+			isa = PBXGroup;
+			children = (
+				D90390582910BAE20079759B /* LoggerTests.swift */,
+				D903905F2910F6A60079759B /* SettingsTests.swift */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		D903905C2910BCA30079759B /* agent */ = {
+			isa = PBXGroup;
+			children = (
+				D90390612910FA4D0079759B /* IDCAErrorTests.swift */,
+			);
+			path = agent;
+			sourceTree = "<group>";
+		};
+		D9169FF52910351F001A9114 /* idcloudclientui */ = {
+			isa = PBXGroup;
+			children = (
+				D9CE14E62934AE6B000AEF0E /* extensions */,
+				D9169FF62910351F001A9114 /* subclasses */,
+				D9169FF82910351F001A9114 /* ClientConformer.swift */,
+				D9169FFB2910351F001A9114 /* vc */,
+			);
+			name = idcloudclientui;
+			path = "dependency/idcloud-fido/idcloudclientui/idcloudclientui";
+			sourceTree = "<group>";
+		};
+		D9169FF62910351F001A9114 /* subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				D9169FF72910351F001A9114 /* SecureLabel.swift */,
+			);
+			path = subclasses;
+			sourceTree = "<group>";
+		};
+		D9169FFB2910351F001A9114 /* vc */ = {
+			isa = PBXGroup;
+			children = (
+				D9169FFC2910351F001A9114 /* LockoutViewController.swift */,
+				D9169FFD2910351F001A9114 /* PinPadViewController.swift */,
+			);
+			path = vc;
+			sourceTree = "<group>";
+		};
+		D930ACFF291358C300EB59CA /* testutil */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = testutil;
+			sourceTree = "<group>";
+		};
+		D9388AA928FEF0FB0080505E = {
+			isa = PBXGroup;
+			children = (
+				D9169FF52910351F001A9114 /* idcloudclientui */,
+				D9388AB428FEF0FB0080505E /* IdCloudAccessSample */,
+				D9388ACB28FEF0FD0080505E /* IdCloudAccessSampleUnitTests */,
+				D9388AB328FEF0FB0080505E /* Products */,
+				DDEF82E9F892E0D90DB971CD /* Pods */,
+				10A2151805F6D25950D4F300 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D9388AB328FEF0FB0080505E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D9388AB228FEF0FB0080505E /* IdCloudAccessSample.app */,
+				D9388AC828FEF0FD0080505E /* IdCloudAccessSampleUnitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D9388AB428FEF0FB0080505E /* IdCloudAccessSample */ = {
+			isa = PBXGroup;
+			children = (
+				D9CE14E92934B11B000AEF0E /* IdCloudAccessSample.entitlements */,
+				D99C0155290922AA00C6978C /* agent */,
+				D95A74352902F33E00B9F966 /* extension */,
+				D9388AE528FEF1AE0080505E /* Target Support Files */,
+				D9C52607290039FB00022D2C /* testplan */,
+				D95A7440290573C400B9F966 /* util */,
+				D9388AEC28FEF3330080505E /* vc */,
+				D9388AB528FEF0FB0080505E /* AppDelegate.swift */,
+				D99C015229091DF200C6978C /* Configuration.swift */,
+				D9388ABE28FEF0FD0080505E /* Assets.xcassets */,
+				D9388AC028FEF0FD0080505E /* LaunchScreen.storyboard */,
+				D9388AC328FEF0FD0080505E /* Info.plist */,
+				D95A74382902F46C00B9F966 /* Localizable.strings */,
+				D99C015E29092AC800C6978C /* IdCloudAccessSample-Bridging-Header.h */,
+			);
+			path = IdCloudAccessSample;
+			sourceTree = "<group>";
+		};
+		D9388ACB28FEF0FD0080505E /* IdCloudAccessSampleUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				D930ACFF291358C300EB59CA /* testutil */,
+				D903905C2910BCA30079759B /* agent */,
+				D903905A2910BAFD0079759B /* util */,
+			);
+			path = IdCloudAccessSampleUnitTests;
+			sourceTree = "<group>";
+		};
+		D9388AE528FEF1AE0080505E /* Target Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D9388AE728FEF1FC0080505E /* icam-project.xcconfig */,
+				D9388AE828FEF1FC0080505E /* icam-target-debug.xcconfig */,
+				D9388AE928FEF1FC0080505E /* icam-target-release.xcconfig */,
+				D930ACFD2913570600EB59CA /* icam-unittest-target-debug.xcconfig */,
+				D930ACFE2913571200EB59CA /* icam-unittest-target-release.xcconfig */,
+			);
+			path = "Target Support Files";
+			sourceTree = "<group>";
+		};
+		D9388AEC28FEF3330080505E /* vc */ = {
+			isa = PBXGroup;
+			children = (
+				D9AE9A232923D527002DB40C /* view */,
+				D9726E0429250B6F0088E069 /* AuthenticationTypeTableViewController.swift */,
+				D9388AED28FEF3330080505E /* MainViewController.swift */,
+				D95A743A29041F6200B9F966 /* SettingsViewController.swift */,
+				D99C015A290924D500C6978C /* WebViewController.swift */,
+			);
+			path = vc;
+			sourceTree = "<group>";
+		};
+		D95A74352902F33E00B9F966 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				D95A74362902F36400B9F966 /* UIColorSystemExtension.swift */,
+				D95A743E29042EDE00B9F966 /* UIControlExtension.swift */,
+				D93BF757290B8738008DB1F2 /* UIAlertControllerExtension.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		D95A7440290573C400B9F966 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				D95A7442290573DE00B9F966 /* Logger.swift */,
+				D906CA14290B689600B14743 /* Settings.swift */,
+				D9726E0629250BC40088E069 /* AuthenticationType.swift */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		D99C0155290922AA00C6978C /* agent */ = {
+			isa = PBXGroup;
+			children = (
+				D99C0156290922E400C6978C /* OIDCAgent.swift */,
+				D99C01582909248E00C6978C /* IDCAUserAgent.swift */,
+				D9FF2263290CC9C700775F0F /* IDCAError.swift */,
+				D99C015C290927F300C6978C /* SCAAgent.swift */,
+				D91095F0290A3DFD009BE81D /* SCAClientConformer.swift */,
+				D9E0F0882928BF8B00C38096 /* RiskAgent.swift */,
+			);
+			path = agent;
+			sourceTree = "<group>";
+		};
+		D9AE9A232923D527002DB40C /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D9AE9A242923D538002DB40C /* EnrollView.swift */,
+				D9AE9A262923DA55002DB40C /* AuthenticationView.swift */,
+				D9AE9A282923DB68002DB40C /* LogView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D9C52607290039FB00022D2C /* testplan */ = {
+			isa = PBXGroup;
+			children = (
+				D9C5260A29003D3F00022D2C /* IdCloudAccessSampleTests.xctestplan */,
+				D9C52608290039FB00022D2C /* IdCloudAccessSampleUnitTests.xctestplan */,
+				D9C52609290039FB00022D2C /* IdCloudAccessSampleUITests.xctestplan */,
+			);
+			path = testplan;
+			sourceTree = SOURCE_ROOT;
+		};
+		D9CE14E62934AE6B000AEF0E /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D9CE14E72934AE6B000AEF0E /* UIColorExtension.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		DDEF82E9F892E0D90DB971CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C02815535EF7962FC5E1A5E1 /* Pods-IdCloudAccessSample.debug.xcconfig */,
+				3E87E908A8A0A4F2C1A97EEA /* Pods-IdCloudAccessSample.release.xcconfig */,
+				229DAC2BFD7D1780BED66095 /* Pods-IdCloudAccessSample-IdCloudAccessSampleUITests.debug.xcconfig */,
+				64E2CF3B74E910479E0A9AAD /* Pods-IdCloudAccessSample-IdCloudAccessSampleUITests.release.xcconfig */,
+				A9F45846A44323E3C1CEC614 /* Pods-IdCloudAccessSampleUnitTests.debug.xcconfig */,
+				5AFB44808AF7D1804D775710 /* Pods-IdCloudAccessSampleUnitTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D9388AB128FEF0FB0080505E /* IdCloudAccessSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9388ADC28FEF0FE0080505E /* Build configuration list for PBXNativeTarget "IdCloudAccessSample" */;
+			buildPhases = (
+				E9157E983B64482D81AAB115 /* [CP] Check Pods Manifest.lock */,
+				D9388AAE28FEF0FB0080505E /* Sources */,
+				D9388AAF28FEF0FB0080505E /* Frameworks */,
+				D9388AB028FEF0FB0080505E /* Resources */,
+				D9CE21822927B76A0052D56F /* Risk SDK */,
+				B7590205FA8C7B1E0B21D6BB /* [CP] Embed Pods Frameworks */,
+				D9F8EACC2910109C00EE13D6 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IdCloudAccessSample;
+			productName = IdCloudAccessSample;
+			productReference = D9388AB228FEF0FB0080505E /* IdCloudAccessSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D9388AC728FEF0FD0080505E /* IdCloudAccessSampleUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9388ADF28FEF0FE0080505E /* Build configuration list for PBXNativeTarget "IdCloudAccessSampleUnitTests" */;
+			buildPhases = (
+				D440EB4CE06C0F675126F3DC /* [CP] Check Pods Manifest.lock */,
+				D9388AC428FEF0FD0080505E /* Sources */,
+				D9388AC528FEF0FD0080505E /* Frameworks */,
+				D9388AC628FEF0FD0080505E /* Resources */,
+				CF3C2CE0CF8B386685ACD926 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9545640291E148B00D546F1 /* PBXTargetDependency */,
+			);
+			name = IdCloudAccessSampleUnitTests;
+			productName = IdCloudAccessSampleTests;
+			productReference = D9388AC828FEF0FD0080505E /* IdCloudAccessSampleUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D9388AAA28FEF0FB0080505E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					D9388AB128FEF0FB0080505E = {
+						CreatedOnToolsVersion = 14.0.1;
+						LastSwiftMigration = 1400;
+					};
+					D9388AC728FEF0FD0080505E = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = D9388AB128FEF0FB0080505E;
+					};
+				};
+			};
+			buildConfigurationList = D9388AAD28FEF0FB0080505E /* Build configuration list for PBXProject "IdCloudAccessSample" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D9388AA928FEF0FB0080505E;
+			productRefGroup = D9388AB328FEF0FB0080505E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D9388AB128FEF0FB0080505E /* IdCloudAccessSample */,
+				D9388AC728FEF0FD0080505E /* IdCloudAccessSampleUnitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D9388AB028FEF0FB0080505E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9388AC228FEF0FD0080505E /* LaunchScreen.storyboard in Resources */,
+				D95A74392902F46C00B9F966 /* Localizable.strings in Resources */,
+				D9388ABF28FEF0FD0080505E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9388AC628FEF0FD0080505E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B7590205FA8C7B1E0B21D6BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IdCloudAccessSample/Pods-IdCloudAccessSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IdCloudAccessSample/Pods-IdCloudAccessSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IdCloudAccessSample/Pods-IdCloudAccessSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF3C2CE0CF8B386685ACD926 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IdCloudAccessSampleUnitTests/Pods-IdCloudAccessSampleUnitTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IdCloudAccessSampleUnitTests/Pods-IdCloudAccessSampleUnitTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IdCloudAccessSampleUnitTests/Pods-IdCloudAccessSampleUnitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D440EB4CE06C0F675126F3DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IdCloudAccessSampleUnitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9CE21822927B76A0052D56F /* Risk SDK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Risk SDK";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$PLATFORM_NAME\" = \"iphoneos\" ]]; then\n    chmod +x \"./dependency/idcloud-risk/D1/D1-script.sh\"\n    ./dependency/idcloud-risk/D1/D1-script.sh\nfi\n";
+		};
+		E9157E983B64482D81AAB115 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IdCloudAccessSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D9388AAE28FEF0FB0080505E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D91095F1290A3DFD009BE81D /* SCAClientConformer.swift in Sources */,
+				D99C0157290922E400C6978C /* OIDCAgent.swift in Sources */,
+				D9169FFE29103520001A9114 /* SecureLabel.swift in Sources */,
+				D906CA15290B689600B14743 /* Settings.swift in Sources */,
+				D95A743F29042EDE00B9F966 /* UIControlExtension.swift in Sources */,
+				D9726E0529250B6F0088E069 /* AuthenticationTypeTableViewController.swift in Sources */,
+				D9FF2264290CC9C700775F0F /* IDCAError.swift in Sources */,
+				D95A7443290573DE00B9F966 /* Logger.swift in Sources */,
+				D916A00129103520001A9114 /* LockoutViewController.swift in Sources */,
+				D99C015B290924D500C6978C /* WebViewController.swift in Sources */,
+				D9E0F0892928BF8B00C38096 /* RiskAgent.swift in Sources */,
+				D9AE9A292923DB68002DB40C /* LogView.swift in Sources */,
+				D99C01592909248E00C6978C /* IDCAUserAgent.swift in Sources */,
+				D9AE9A252923D538002DB40C /* EnrollView.swift in Sources */,
+				D99C015329091DF200C6978C /* Configuration.swift in Sources */,
+				D9388AEE28FEF3330080505E /* MainViewController.swift in Sources */,
+				D9388AB628FEF0FB0080505E /* AppDelegate.swift in Sources */,
+				D95A74372902F36400B9F966 /* UIColorSystemExtension.swift in Sources */,
+				D916A00229103520001A9114 /* PinPadViewController.swift in Sources */,
+				D9CE14E82934AE6B000AEF0E /* UIColorExtension.swift in Sources */,
+				D99C015D290927F300C6978C /* SCAAgent.swift in Sources */,
+				D9AE9A272923DA55002DB40C /* AuthenticationView.swift in Sources */,
+				D9169FFF29103520001A9114 /* ClientConformer.swift in Sources */,
+				D9726E0729250BC40088E069 /* AuthenticationType.swift in Sources */,
+				D93BF758290B8738008DB1F2 /* UIAlertControllerExtension.swift in Sources */,
+				D95A743B29041F6200B9F966 /* SettingsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9388AC428FEF0FD0080505E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D90390592910BAE20079759B /* LoggerTests.swift in Sources */,
+				D90390602910F6A60079759B /* SettingsTests.swift in Sources */,
+				D90390622910FA4D0079759B /* IDCAErrorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D9545640291E148B00D546F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D9388AB128FEF0FB0080505E /* IdCloudAccessSample */;
+			targetProxy = D954563F291E148B00D546F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D9388AC028FEF0FD0080505E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9388AC128FEF0FD0080505E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D9388ADA28FEF0FE0080505E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9388AE728FEF1FC0080505E /* icam-project.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D9388ADB28FEF0FE0080505E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9388AE728FEF1FC0080505E /* icam-project.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D9388ADD28FEF0FE0080505E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9388AE828FEF1FC0080505E /* icam-target-debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = IdCloudAccessSample/IdCloudAccessSample.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 202108060954;
+				DEVELOPMENT_TEAM = LMY4YJ949Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IdCloudAccessSample/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "IdCloud Access";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Face ID is required to authenticate the user.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 THALES";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "No location permission required from the user";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "No location permission required from the user";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thalesgroup.gemalto.IdCloudAccessSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "IdCloudAccessSample/IdCloudAccessSample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		D9388ADE28FEF0FE0080505E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9388AE928FEF1FC0080505E /* icam-target-release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = IdCloudAccessSample/IdCloudAccessSample.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 202108060954;
+				DEVELOPMENT_TEAM = LMY4YJ949Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IdCloudAccessSample/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "IdCloud Access";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Face ID is required to authenticate the user.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 THALES";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "No location permission required from the user";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "No location permission required from the user";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thalesgroup.gemalto.IdCloudAccessSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "IdCloudAccessSample/IdCloudAccessSample-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		D9388AE028FEF0FE0080505E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D930ACFD2913570600EB59CA /* icam-unittest-target-debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LMY4YJ949Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thalesgroup.gemalto.IdCloudAccessSampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IdCloudAccessSample.app/IdCloudAccessSample";
+			};
+			name = Debug;
+		};
+		D9388AE128FEF0FE0080505E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D930ACFE2913571200EB59CA /* icam-unittest-target-release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LMY4YJ949Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thalesgroup.gemalto.IdCloudAccessSampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IdCloudAccessSample.app/IdCloudAccessSample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D9388AAD28FEF0FB0080505E /* Build configuration list for PBXProject "IdCloudAccessSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9388ADA28FEF0FE0080505E /* Debug */,
+				D9388ADB28FEF0FE0080505E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9388ADC28FEF0FE0080505E /* Build configuration list for PBXNativeTarget "IdCloudAccessSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9388ADD28FEF0FE0080505E /* Debug */,
+				D9388ADE28FEF0FE0080505E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9388ADF28FEF0FE0080505E /* Build configuration list for PBXNativeTarget "IdCloudAccessSampleUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9388AE028FEF0FE0080505E /* Debug */,
+				D9388AE128FEF0FE0080505E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D9388AAA28FEF0FB0080505E /* Project object */;
+}
