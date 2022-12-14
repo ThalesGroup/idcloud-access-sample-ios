@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "6E8C293E-A1CB-4DCC-B7A4-ED02C8A97EE1",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:IdCloudAccessSample.xcodeproj",
+        "identifier" : "D9388AC728FEF0FD0080505E",
+        "name" : "IdCloudAccessSampleUnitTests"
+      }
+    }
+  ],
+  "version" : 1
+}

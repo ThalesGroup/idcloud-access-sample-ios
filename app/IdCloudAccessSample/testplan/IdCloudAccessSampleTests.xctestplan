@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "D16390C1-A815-4687-ACCD-DEFE7FE72766",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:IdCloudAccessSample.xcodeproj",
+        "identifier" : "D9388AC728FEF0FD0080505E",
+        "name" : "IdCloudAccessSampleUnitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:IdCloudAccessSample.xcodeproj",
+        "identifier" : "D9388AD128FEF0FD0080505E",
+        "name" : "IdCloudAccessSampleUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

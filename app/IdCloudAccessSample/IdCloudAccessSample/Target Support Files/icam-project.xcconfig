@@ -1,0 +1,21 @@
+//
+//
+// Copyright © 2022 THALES. All rights reserved.
+//
+    
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+ENABLE_BITCODE = NO
+
+IPHONEOS_DEPLOYMENT_TARGET = 13.0
+
+// copyright plist
+GENERATE_INFOPLIST_FILE = YES
+YEAR_VARIABLE = 2022
+INFOPLIST_KEY_NSHumanReadableCopyright = Copyright © $(YEAR_VARIABLE) THALES
+INFOPLIST_KEY_CFBundleDisplayName = IdCloud Access
+
+LIBS_PATH = $(PROJECT_DIR)/dependency
+FRAMEWORK_SEARCH_PATHS = $(inherited) $(LIBS_PATH)/idcloud-fido/SecureLogAPI/$(CONFIGURATION)
