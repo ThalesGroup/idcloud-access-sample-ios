@@ -13,14 +13,22 @@ class AuthenticationView: UIView {
         usernameLabel.font = UIFont.boldSystemFont(ofSize: UIFont.preferredFont(forTextStyle: .title2).pointSize)
         return usernameLabel
     }()
-
     let usernameValueLabel: UILabel = {
         let usernameValueLabel = UILabel()
         usernameValueLabel.text = Settings.username
         usernameValueLabel.font = UIFont.preferredFont(forTextStyle: .title3)
         return usernameValueLabel
     }()
-
+    let usernameTextField: UITextField = {
+        let usernameTextField = UITextField()
+        usernameTextField.placeholder = NSLocalizedString("username_textfield_placeholder", comment: "")
+        usernameTextField.font = UIFont.preferredFont(forTextStyle: .title3)
+        usernameTextField.autocapitalizationType = .none
+        usernameTextField.autocorrectionType = .no
+        usernameTextField.returnKeyType = .done
+        usernameTextField.isHidden = true
+        return usernameTextField
+    }()
     let authenticationTypeLabel: UILabel = {
         let authenticationTypeLabel = UILabel()
         authenticationTypeLabel.text = NSLocalizedString("authentication_type_label", comment: "")
@@ -45,6 +53,21 @@ class AuthenticationView: UIView {
         return authenticateSignInButton
     }()
 
+    init() {
+        super.init(frame: .zero)
+        usernameTextField.delegate = self
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        usernameTextField.delegate = self
+    }
+
+    func toggleUsernameEntry(_ toEnter: Bool) {
+        usernameValueLabel.isHidden = toEnter
+        usernameTextField.isHidden = !toEnter
+    }
+
     override func layoutSubviews() {
         usernameLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(usernameLabel)
@@ -62,12 +85,20 @@ class AuthenticationView: UIView {
             usernameValueLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 16.0),
         ])
 
+        usernameTextField.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(usernameTextField)
+        addConstraints([
+            usernameTextField.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
+            usernameTextField.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
+            usernameTextField.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 16.0),
+        ])
+
         authenticationTypeLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(authenticationTypeLabel)
         addConstraints([
             authenticationTypeLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
             authenticationTypeLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
-            authenticationTypeLabel.topAnchor.constraint(equalTo: usernameValueLabel.bottomAnchor, constant: 16.0),
+            authenticationTypeLabel.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: 16.0),
         ])
 
         authenticationTypeButton.translatesAutoresizingMaskIntoConstraints = false
@@ -89,5 +120,17 @@ class AuthenticationView: UIView {
 
         super.layoutSubviews()
         authenticationTypeButton.addUnderline()
+        usernameTextField.addUnderline()
+    }
+}
+
+extension AuthenticationView: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return true
     }
 }

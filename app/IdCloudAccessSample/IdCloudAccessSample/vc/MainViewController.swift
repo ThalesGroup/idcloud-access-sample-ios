@@ -9,10 +9,6 @@ import D1
 import WebKit
 
 class MainViewController: UIViewController {
-    private var isEnrolled: Bool {
-        return !Settings.username.isEmpty
-    }
-
     // Enroll
     private let enrollView: EnrollView = {
         let enrollView = EnrollView()
@@ -31,17 +27,8 @@ class MainViewController: UIViewController {
         return logView
     }()
 
+    private lazy var scaAgent = SCAAgent()
     private let semaphore = DispatchSemaphore(value: 0)
-    private let activityIndicator: UIActivityIndicatorView = {
-        var activityIndicator: UIActivityIndicatorView!
-        if #available(iOS 13.0, *) {
-            activityIndicator = UIActivityIndicatorView(style: .medium)
-        } else {
-            activityIndicator = UIActivityIndicatorView(style: .white)
-        }
-        activityIndicator.hidesWhenStopped = true
-        return activityIndicator
-    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,12 +42,11 @@ class MainViewController: UIViewController {
                                                     style: .plain,
                                                     target: self,
                                                     action: #selector(settings(_:)))
-        let activityIndicatorBarButton = UIBarButtonItem(customView: activityIndicator)
         navigationItem.rightBarButtonItems = [
             settingsBarButtonItem,
-            activityIndicatorBarButton
+            IDCANavigationController.activityIndicatorBarButton
         ]
-
+        
         enrollView.registerButton.addTarget(self, action: #selector(register(_:)), for: .touchUpInside)
         enrollView.signInButton.addTarget(self, action: #selector(signIn(_:)), for: .touchUpInside)
         authenticateView.authenticationTypeButton.addTarget(self, action: #selector(authenticationTypeDropdown(_:)), for: .touchUpInside)
@@ -79,6 +65,25 @@ class MainViewController: UIViewController {
 
         NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeActive(_:)), name: UIApplication.didBecomeActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(appWillResignActive(_:)), name: UIApplication.willResignActiveNotification, object: nil)
+
+        if SCAAgent.isEnrolled() {
+            IDCANavigationController.startAnimating()
+            scaAgent.fetch { [weak self] idcaError in
+                IDCANavigationController.stopAnimating()
+                AppDelegate.rootViewController.popViewController(animated: true)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    if let error = idcaError {
+                        UIAlertController.showErrorAlert(viewController: self,
+                                                         error: error)
+                    } else {
+                        UIAlertController.showToast(viewController: self,
+                                                    title: NSLocalizedString("sign_in_button_title", comment: ""),
+                                                    message: NSLocalizedString("alert_success_msg", comment: ""))
+                    }
+                }
+            }
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -97,13 +102,15 @@ class MainViewController: UIViewController {
     }
 
     @objc func register(_ button: UIButton) {
-        guard let username = assertUsername() else {
+        guard let username = assertUsername(forTextField: enrollView.usernameTextField) else {
             return
         }
 
         let acrValue = "enroll sca=fidomob"
+        IDCANavigationController.startAnimating()
         OIDCAgent.authorize(username: username,
                             acr: acrValue) { [weak self] error in
+            IDCANavigationController.stopAnimating()
             if let error = error {
                 UIAlertController.showErrorAlert(viewController: self,
                                                  error: error)
@@ -118,7 +125,7 @@ class MainViewController: UIViewController {
     }
 
     @objc func signIn(_ button: UIButton) {
-        guard let username = assertUsername() else {
+        guard let username = assertUsername(forTextField: enrollView.usernameTextField) else {
             return
         }
         var aError: IDCAError?
@@ -128,8 +135,9 @@ class MainViewController: UIViewController {
             RiskAgent.userAgent = userAgent
         }
 
+        IDCANavigationController.startAnimating()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            RiskAgent.submitRiskPayload { [weak self] riskID, error in
+            RiskAgent.submitRiskPayload(username: username) { [weak self] riskID, error in
                 if let riskID = riskID {
                     acrValue += " riskid=\(riskID)"
                 } else if let error = error {
@@ -149,6 +157,7 @@ class MainViewController: UIViewController {
 
             OIDCAgent.authorize(username: username,
                                 acr: acrValue) { [weak self] error in
+                IDCANavigationController.stopAnimating()
                 if let error = error {
                     UIAlertController.showErrorAlert(viewController: self,
                                                      error: error)
@@ -177,6 +186,12 @@ class MainViewController: UIViewController {
     }
 
     @objc func authenticationSignIn(_ button: UIButton) {
+        if Settings.username.isEmpty {
+            guard let username = assertUsername(forTextField: authenticateView.usernameTextField) else {
+                return
+            }
+            Settings.username = username
+        }
         var aError: IDCAError?
 
         var acrValue = "\(Settings.authenticationType.acrValue) sca=fidomob"
@@ -187,11 +202,12 @@ class MainViewController: UIViewController {
         if let userAgent = WKWebView().value(forKey: "userAgent") as? String {
             RiskAgent.userAgent = userAgent
         }
-        
+
+        IDCANavigationController.startAnimating()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             if Settings.authenticationType == .rba ||
                 Settings.authenticationType == .silent {
-                RiskAgent.submitRiskPayload { [weak self] riskID, error in
+                RiskAgent.submitRiskPayload(username: Settings.username) { [weak self] riskID, error in
                     if let riskID = riskID {
                         acrValue += " riskid=\(riskID)"
                     } else if let error = error {
@@ -212,6 +228,7 @@ class MainViewController: UIViewController {
 
             OIDCAgent.authorize(username: Settings.username,
                                 acr: acrValue) { [weak self] error in
+                IDCANavigationController.stopAnimating()
                 if let error = error {
                     UIAlertController.showErrorAlert(viewController: self,
                                                      error: error)
@@ -232,9 +249,9 @@ class MainViewController: UIViewController {
 
     // MARK: Private
 
-    private func assertUsername() -> String? {
-        enrollView.usernameTextField.endEditing(true)
-        guard let username = enrollView.usernameTextField.text,
+    private func assertUsername(forTextField textField: UITextField) -> String? {
+        textField.endEditing(true)
+        guard let username = textField.text,
             !username.isEmpty else {
             UIAlertController.showAlert(viewController: self,
                                         title: NSLocalizedString("alert_error_title", comment: ""),
@@ -260,9 +277,11 @@ extension MainViewController {
     // MARK: Layout
 
     private func layout() {
+        displayScreen()
+
         view.subviews.forEach { $0.removeFromSuperview() }
 
-        let topView = isEnrolled ? authenticateView : enrollView
+        let topView = enrollView.isHidden ? authenticateView : enrollView
         topView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(topView)
         view.addConstraints([
@@ -279,14 +298,14 @@ extension MainViewController {
             logView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 16.0),
             logView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
         ])
-        displayScreen()
     }
 
     private func displayScreen() {
         logView.logTextView.isHidden = !Settings.showLogger
         logView.clearLogsButton.isHidden = !Settings.showLogger
-        enrollView.isHidden = isEnrolled
-        authenticateView.isHidden = !isEnrolled
+        enrollView.isHidden = SCAAgent.isEnrolled()
+        authenticateView.isHidden = !SCAAgent.isEnrolled()
+        authenticateView.toggleUsernameEntry(Settings.username.isEmpty)
     }
 }
 
@@ -307,11 +326,11 @@ extension MainViewController {
     // MARK: Private
 
     private func startAnalyze() {
-        activityIndicator.startAnimating()
+        IDCANavigationController.startAnimating()
         view.isUserInteractionEnabled = false
         RiskAgent.startAnalyze(view: view) { [weak self] _ in
             self?.view.isUserInteractionEnabled = true
-            self?.activityIndicator.stopAnimating()
+            IDCANavigationController.stopAnimating()
         }
     }
 }

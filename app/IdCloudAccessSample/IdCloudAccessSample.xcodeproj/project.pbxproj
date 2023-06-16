@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0967DCDF625619B452348663 /* Pods_IdCloudAccessSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D9B4E93CC00AB8F82FDECF /* Pods_IdCloudAccessSample.framework */; };
 		0F07DD92D2B0B2E8B695807B /* Pods_IdCloudAccessSampleUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601056CF2E34BC0253F089E8 /* Pods_IdCloudAccessSampleUnitTests.framework */; };
+		4D30DFAA2A21FA3C00149FCF /* PushNotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D30DFA92A21FA3C00149FCF /* PushNotificationUtil.swift */; };
+		4D9787032A24F9820056006F /* IDCANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9787022A24F9820056006F /* IDCANavigationController.swift */; };
 		D90390592910BAE20079759B /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90390582910BAE20079759B /* LoggerTests.swift */; };
 		D90390602910F6A60079759B /* SettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D903905F2910F6A60079759B /* SettingsTests.swift */; };
 		D90390622910FA4D0079759B /* IDCAErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90390612910FA4D0079759B /* IDCAErrorTests.swift */; };
@@ -18,6 +20,8 @@
 		D9169FFF29103520001A9114 /* ClientConformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9169FF82910351F001A9114 /* ClientConformer.swift */; };
 		D916A00129103520001A9114 /* LockoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9169FFC2910351F001A9114 /* LockoutViewController.swift */; };
 		D916A00229103520001A9114 /* PinPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9169FFD2910351F001A9114 /* PinPadViewController.swift */; };
+		D92AB47C2A1326F600EAC4D3 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92AB47B2A1326F600EAC4D3 /* QRScannerViewController.swift */; };
+		D92AB47E2A13296F00EAC4D3 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92AB47D2A13296F00EAC4D3 /* LandingViewController.swift */; };
 		D9388AB628FEF0FB0080505E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9388AB528FEF0FB0080505E /* AppDelegate.swift */; };
 		D9388ABF28FEF0FD0080505E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9388ABE28FEF0FD0080505E /* Assets.xcassets */; };
 		D9388AC228FEF0FD0080505E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9388AC028FEF0FD0080505E /* LaunchScreen.storyboard */; };
@@ -38,6 +42,7 @@
 		D9AE9A252923D538002DB40C /* EnrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE9A242923D538002DB40C /* EnrollView.swift */; };
 		D9AE9A272923DA55002DB40C /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE9A262923DA55002DB40C /* AuthenticationView.swift */; };
 		D9AE9A292923DB68002DB40C /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE9A282923DB68002DB40C /* LogView.swift */; };
+		D9CBB01D2A13BE48003450AF /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CBB01C2A13BE48003450AF /* LandingView.swift */; };
 		D9CE14E82934AE6B000AEF0E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CE14E72934AE6B000AEF0E /* UIColorExtension.swift */; };
 		D9CE21812927B74A0052D56F /* libd1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CE21802927B74A0052D56F /* libd1.a */; };
 		D9E0F0892928BF8B00C38096 /* RiskAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E0F0882928BF8B00C38096 /* RiskAgent.swift */; };
@@ -76,6 +81,8 @@
 		3E87E908A8A0A4F2C1A97EEA /* Pods-IdCloudAccessSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdCloudAccessSample.release.xcconfig"; path = "Target Support Files/Pods-IdCloudAccessSample/Pods-IdCloudAccessSample.release.xcconfig"; sourceTree = "<group>"; };
 		41D9B4E93CC00AB8F82FDECF /* Pods_IdCloudAccessSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IdCloudAccessSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AE867AFE7D50B4F2C6DCA6C /* Pods_IdCloudAccessSample_IdCloudAccessSampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IdCloudAccessSample_IdCloudAccessSampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D30DFA92A21FA3C00149FCF /* PushNotificationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationUtil.swift; sourceTree = "<group>"; };
+		4D9787022A24F9820056006F /* IDCANavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDCANavigationController.swift; sourceTree = "<group>"; };
 		5AFB44808AF7D1804D775710 /* Pods-IdCloudAccessSampleUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdCloudAccessSampleUnitTests.release.xcconfig"; path = "Target Support Files/Pods-IdCloudAccessSampleUnitTests/Pods-IdCloudAccessSampleUnitTests.release.xcconfig"; sourceTree = "<group>"; };
 		601056CF2E34BC0253F089E8 /* Pods_IdCloudAccessSampleUnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IdCloudAccessSampleUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64E2CF3B74E910479E0A9AAD /* Pods-IdCloudAccessSample-IdCloudAccessSampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdCloudAccessSample-IdCloudAccessSampleUITests.release.xcconfig"; path = "Target Support Files/Pods-IdCloudAccessSample-IdCloudAccessSampleUITests/Pods-IdCloudAccessSample-IdCloudAccessSampleUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +97,8 @@
 		D9169FF82910351F001A9114 /* ClientConformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientConformer.swift; sourceTree = "<group>"; };
 		D9169FFC2910351F001A9114 /* LockoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockoutViewController.swift; sourceTree = "<group>"; };
 		D9169FFD2910351F001A9114 /* PinPadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinPadViewController.swift; sourceTree = "<group>"; };
+		D92AB47B2A1326F600EAC4D3 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		D92AB47D2A13296F00EAC4D3 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		D930ACFD2913570600EB59CA /* icam-unittest-target-debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "icam-unittest-target-debug.xcconfig"; sourceTree = "<group>"; };
 		D930ACFE2913571200EB59CA /* icam-unittest-target-release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "icam-unittest-target-release.xcconfig"; sourceTree = "<group>"; };
 		D9388AB228FEF0FB0080505E /* IdCloudAccessSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdCloudAccessSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +131,7 @@
 		D9C52608290039FB00022D2C /* IdCloudAccessSampleUnitTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = IdCloudAccessSampleUnitTests.xctestplan; sourceTree = "<group>"; };
 		D9C52609290039FB00022D2C /* IdCloudAccessSampleUITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = IdCloudAccessSampleUITests.xctestplan; sourceTree = "<group>"; };
 		D9C5260A29003D3F00022D2C /* IdCloudAccessSampleTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = IdCloudAccessSampleTests.xctestplan; sourceTree = "<group>"; };
+		D9CBB01C2A13BE48003450AF /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		D9CE14E72934AE6B000AEF0E /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		D9CE14E92934B11B000AEF0E /* IdCloudAccessSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IdCloudAccessSample.entitlements; sourceTree = "<group>"; };
 		D9CE21802927B74A0052D56F /* libd1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libd1.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,6 +302,9 @@
 				D9388AED28FEF3330080505E /* MainViewController.swift */,
 				D95A743A29041F6200B9F966 /* SettingsViewController.swift */,
 				D99C015A290924D500C6978C /* WebViewController.swift */,
+				D92AB47B2A1326F600EAC4D3 /* QRScannerViewController.swift */,
+				D92AB47D2A13296F00EAC4D3 /* LandingViewController.swift */,
+				4D9787022A24F9820056006F /* IDCANavigationController.swift */,
 			);
 			path = vc;
 			sourceTree = "<group>";
@@ -312,6 +325,7 @@
 				D95A7442290573DE00B9F966 /* Logger.swift */,
 				D906CA14290B689600B14743 /* Settings.swift */,
 				D9726E0629250BC40088E069 /* AuthenticationType.swift */,
+				4D30DFA92A21FA3C00149FCF /* PushNotificationUtil.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -335,6 +349,7 @@
 				D9AE9A242923D538002DB40C /* EnrollView.swift */,
 				D9AE9A262923DA55002DB40C /* AuthenticationView.swift */,
 				D9AE9A282923DB68002DB40C /* LogView.swift */,
+				D9CBB01C2A13BE48003450AF /* LandingView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -580,6 +595,7 @@
 			files = (
 				D91095F1290A3DFD009BE81D /* SCAClientConformer.swift in Sources */,
 				D99C0157290922E400C6978C /* OIDCAgent.swift in Sources */,
+				4D30DFAA2A21FA3C00149FCF /* PushNotificationUtil.swift in Sources */,
 				D9169FFE29103520001A9114 /* SecureLabel.swift in Sources */,
 				D906CA15290B689600B14743 /* Settings.swift in Sources */,
 				D95A743F29042EDE00B9F966 /* UIControlExtension.swift in Sources */,
@@ -587,6 +603,7 @@
 				D9FF2264290CC9C700775F0F /* IDCAError.swift in Sources */,
 				D95A7443290573DE00B9F966 /* Logger.swift in Sources */,
 				D916A00129103520001A9114 /* LockoutViewController.swift in Sources */,
+				D9CBB01D2A13BE48003450AF /* LandingView.swift in Sources */,
 				D99C015B290924D500C6978C /* WebViewController.swift in Sources */,
 				D9E0F0892928BF8B00C38096 /* RiskAgent.swift in Sources */,
 				D9AE9A292923DB68002DB40C /* LogView.swift in Sources */,
@@ -598,9 +615,12 @@
 				D95A74372902F36400B9F966 /* UIColorSystemExtension.swift in Sources */,
 				D916A00229103520001A9114 /* PinPadViewController.swift in Sources */,
 				D9CE14E82934AE6B000AEF0E /* UIColorExtension.swift in Sources */,
+				4D9787032A24F9820056006F /* IDCANavigationController.swift in Sources */,
 				D99C015D290927F300C6978C /* SCAAgent.swift in Sources */,
 				D9AE9A272923DA55002DB40C /* AuthenticationView.swift in Sources */,
+				D92AB47E2A13296F00EAC4D3 /* LandingViewController.swift in Sources */,
 				D9169FFF29103520001A9114 /* ClientConformer.swift in Sources */,
+				D92AB47C2A1326F600EAC4D3 /* QRScannerViewController.swift in Sources */,
 				D9726E0729250BC40088E069 /* AuthenticationType.swift in Sources */,
 				D93BF758290B8738008DB1F2 /* UIAlertControllerExtension.swift in Sources */,
 				D95A743B29041F6200B9F966 /* SettingsViewController.swift in Sources */,
@@ -767,6 +787,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IdCloudAccessSample/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "IdCloud Access";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera usage is required to scan the QR code.";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Face ID is required to authenticate the user.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 THALES";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "No location permission required from the user";
@@ -779,7 +800,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thalesgroup.gemalto.IdCloudAccessSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -807,6 +828,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IdCloudAccessSample/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "IdCloud Access";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera usage is required to scan the QR code.";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Face ID is required to authenticate the user.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 THALES";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "No location permission required from the user";
@@ -819,7 +841,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thalesgroup.gemalto.IdCloudAccessSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

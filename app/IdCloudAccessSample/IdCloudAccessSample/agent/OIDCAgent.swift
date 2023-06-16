@@ -12,7 +12,7 @@ struct OIDCAgent {
     private static var authState: OIDAuthState?
 
     static func authorize(username: String, acr: String, completion: @escaping (IDCAError?) -> Void) {
-        OIDAuthorizationService.discoverConfiguration(forIssuer: Configuration.idpURL) { configuration, error in
+        OIDAuthorizationService.discoverConfiguration(forIssuer: URL(string: Settings.idpURLString)!) { configuration, error in
             if let error = error {
                 Logger.log("Failed to discover: \(error.localizedDescription)")
                 completion(IDCAError(oidError: error))
@@ -31,10 +31,10 @@ struct OIDCAgent {
                 "acr_values": acr
             ]
             let request: OIDAuthorizationRequest = OIDAuthorizationRequest(configuration: configuration,
-                                                                           clientId: Configuration.clientID,
-                                                                           clientSecret: Configuration.clientSecret,
+                                                                           clientId: Settings.clientID,
+                                                                           clientSecret: Settings.clientSecret.isEmpty ? nil : Settings.clientSecret,
                                                                            scopes: [ OIDScopeOpenID],
-                                                                           redirectURL: Configuration.redirectURL,
+                                                                           redirectURL: URL(string: Settings.redirectURLString)!,
                                                                            responseType: OIDResponseTypeCode,
                                                                            additionalParameters: additionalParameters)
             currentAuthorizationFlow =  OIDAuthState.authState(byPresenting: request,

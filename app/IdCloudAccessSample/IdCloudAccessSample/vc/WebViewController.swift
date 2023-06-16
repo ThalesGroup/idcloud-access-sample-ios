@@ -10,12 +10,6 @@ import WebKit
 class WebViewController: UIViewController {
     private let webView: WKWebView
     private let url: URL
-    private let activityIndicator: UIActivityIndicatorView = {
-        var activityIndicator: UIActivityIndicatorView!
-        activityIndicator = UIActivityIndicatorView(style: .medium)
-        activityIndicator.hidesWhenStopped = true
-        return activityIndicator
-    }()
 
     var redirectCallback: ((URL, (WKNavigationActionPolicy) -> Void) -> Void)?
 
@@ -39,9 +33,11 @@ class WebViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = .extBackground
         layout()
-        let activityIndicatorBarButton = UIBarButtonItem(customView: activityIndicator)
-        navigationItem.rightBarButtonItem = activityIndicatorBarButton
-
+        
+        navigationItem.rightBarButtonItems = [
+            IDCANavigationController.activityIndicatorBarButton
+        ]
+        
         webView.navigationDelegate = self
 
         let request = URLRequest(url: url)
@@ -91,10 +87,10 @@ extension WebViewController: WKNavigationDelegate {
     }
 
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        activityIndicator.startAnimating()
+        IDCANavigationController.startAnimating()
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        activityIndicator.stopAnimating()
+        IDCANavigationController.stopAnimating()
     }
 }

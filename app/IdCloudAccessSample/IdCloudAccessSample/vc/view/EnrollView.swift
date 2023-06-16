@@ -16,7 +16,6 @@ class EnrollView: UIView {
     let usernameTextField: UITextField = {
         let usernameTextField = UITextField()
         usernameTextField.placeholder = NSLocalizedString("username_textfield_placeholder", comment: "")
-        usernameTextField.text = Settings.username
         usernameTextField.font = UIFont.preferredFont(forTextStyle: .title3)
         usernameTextField.autocapitalizationType = .none
         usernameTextField.autocorrectionType = .no
@@ -94,7 +93,6 @@ class EnrollView: UIView {
 
         super.layoutSubviews()
         usernameTextField.addUnderline()
-
     }
 }
 

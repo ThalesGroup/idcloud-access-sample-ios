@@ -9,10 +9,14 @@ import IdCloudClient
 import LocalAuthentication
 
 class SCAAgent: NSObject {
-    private var client = try! IDCIdCloudClient(url: Configuration.msURL, tenantId: Configuration.tenantID)
+    private var client = try! IDCIdCloudClient(url: Settings.msURLString, tenantId: Settings.tenantID)
     private var enrollRequest: IDCEnrollRequest?
     private var fetchRequest: IDCFetchRequest?
+    private var refreshPushTokenRequest: IDCRefreshPushTokenRequest?
+    private var processNotificationRequest: IDCProcessNotificationRequest?
     private var unenrollRequest: IDCUnenrollRequest?
+    
+    static var processingNotificationRequest: Bool = false
 
     let clientConformer: SCAClientConformer = {
         let clientConformer = SCAClientConformer()
@@ -31,10 +35,10 @@ class SCAAgent: NSObject {
             slComps.fileID = "sample"
 
             // Set Mandatory parameters
-            slComps.publicKeyModulus = NSData(bytes: Configuration.publicKeyModulus,
-                                              length: Configuration.publicKeyModulus.count) as Data
-            slComps.publicKeyExponent = NSData(bytes: Configuration.publicKeyExponent,
-                                               length: Configuration.publicKeyExponent.count) as Data
+            slComps.publicKeyModulus = NSData(bytes: Settings.publicKeyModulus,
+                                              length: Settings.publicKeyModulus.count) as Data
+            slComps.publicKeyExponent = NSData(bytes: Settings.publicKeyExponent,
+                                               length: Settings.publicKeyExponent.count) as Data
         }
 
         IDCIdCloudClient.configureSecureLog(config)
@@ -45,8 +49,12 @@ class SCAAgent: NSObject {
     }
 
     static func clientId() -> String? {
-        let client = try? IDCIdCloudClient(url: Configuration.msURL, tenantId: Configuration.tenantID)
+        let client = try? IDCIdCloudClient(url: Settings.msURLString, tenantId: Settings.tenantID)
         return client?.clientID()
+    }
+
+    static func isEnrolled() -> Bool {
+        return clientId() != nil
     }
 
     func enroll(enrollmentToken code: String, completion: @escaping (IDCAError?) -> Void) {
@@ -55,6 +63,8 @@ class SCAAgent: NSObject {
                 fatalError("Unable to convert enrollmentToken string to bytes")
             }
             let enrollmentToken = try IDCEnrollmentTokenFactory.createEnrollmentToken(tokenData)
+            enrollmentToken.setDevicePushToken(Settings.devicePushToken)
+            
             let uiDelegates = IDCUiDelegates()
             uiDelegates.commonUiDelegate = clientConformer
             uiDelegates.biometricUiDelegate = clientConformer
@@ -86,6 +96,10 @@ class SCAAgent: NSObject {
     }
 
     func fetch(completion: @escaping (IDCAError?) -> Void) {
+        guard SCAAgent.processingNotificationRequest == false else {
+            return
+        }
+        
         let uiDelegates = IDCUiDelegates()
         uiDelegates.commonUiDelegate = clientConformer
         uiDelegates.biometricUiDelegate = clientConformer
@@ -106,7 +120,43 @@ class SCAAgent: NSObject {
         }
         fetchRequest?.execute()
     }
-
+    
+    func refreshPushToken(deviceToken: String, completion: @escaping (IDCAError?) -> Void) {
+        refreshPushTokenRequest = client.createRefreshPushTokenRequest(withDeviceToken: deviceToken,
+                                                                       progress: { _ in
+            // Do something
+        }, completion: { _, error in
+            if let idcError = error as? IDCError {
+                completion(IDCAError(scaError: idcError))
+            } else {
+                completion(nil)
+            }
+        })
+        refreshPushTokenRequest?.execute()
+    }
+    
+    func processNotification(notification: [AnyHashable: Any], completion: @escaping (IDCAError?) -> Void) {
+        SCAAgent.processingNotificationRequest = true
+        
+        let uiDelegates = IDCUiDelegates()
+        uiDelegates.commonUiDelegate = clientConformer
+        uiDelegates.biometricUiDelegate = clientConformer
+        uiDelegates.securePinPadUiDelegate = clientConformer
+        uiDelegates.platformUiDelegate = clientConformer
+        
+        processNotificationRequest = client.createProcessNotificationRequest(withNotification: notification, uiDelegates: uiDelegates, progress: { _ in
+            // Do something
+        }, completion: { _, error in
+            SCAAgent.processingNotificationRequest = false
+            if let idcError = error as? IDCError {
+                completion(IDCAError(scaError: idcError))
+            } else {
+                completion(nil)
+            }
+        })
+        processNotificationRequest?.execute()
+    }
+    
     func unenroll(completion: @escaping (IDCAError?) -> Void) {
         unenrollRequest = client.createUnenrollRequest(progress: { _ in
             // Do something

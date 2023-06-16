@@ -23,7 +23,10 @@ class Settings {
 
     @Storage<Bool>(key: "IDC_ACCESS_KEY_SHOW_LOGGER", defaultValue: false)
     static var showLogger: Bool
-
+    
+    @Storage<String>(key: "IDC_ACCESS_KEY_DEVICE_PUSH_TOKEN", defaultValue: "")
+    static var devicePushToken: String
+    
     static var authenticationType: AuthenticationType {
         get {
             return AuthenticationType(rawValue: authenticationTypeString)!
@@ -32,6 +35,40 @@ class Settings {
             authenticationTypeString = newValue.rawValue
         }
     }
+
+    
+    @Storage<String>(key: "IDC_ACCESS_KEY_IDP_URL", defaultValue: IDP_URL)
+    static var idpURLString: String
+    
+    @Storage<String>(key: "IDC_ACCESS_KEY_REDIRECT_URL", defaultValue: REDIRECT_URL)
+    static var redirectURLString: String
+    
+    @Storage<String>(key: "IDC_ACCESS_KEY_CLIENT_ID", defaultValue: CLIENT_ID)
+    static var clientID: String
+
+    @Storage<String>(key: "IDC_ACCESS_KEY_CLIENT_SECRET", defaultValue: CLIENT_SECRET ?? "")
+    static var clientSecret: String
+    
+    @Storage<String>(key: "IDC_ACCESS_KEY_MS_URL", defaultValue: MS_URL)
+    static var msURLString: String
+    
+    @Storage<String>(key: "IDC_ACCESS_KEY_TENANT_ID", defaultValue: TENANT_ID)
+    static var tenantID: String
+    
+    @Storage<[CUnsignedChar]>(key: "IDC_ACCESS_KEY_PUBLIC_KEY_MODULUS", defaultValue: PUBLIC_KEY_MODULUS)
+    static var publicKeyModulus: [CUnsignedChar]
+    
+    @Storage<[CUnsignedChar]>(key: "IDC_ACCESS_KEY_PUBLIC_KEY_EXPONENT", defaultValue: PUBLIC_KEY_EXPONENT)
+    static var publicKeyExponent: [CUnsignedChar]
+    
+    @Storage<String>(key: "IDC_ACCESS_KEY_ND_URL", defaultValue: ND_URL)
+    static var ndURLString: String
+    
+    @Storage<String>(key: "IDC_ACCESS_KEY_RISK_CLIENT_ID", defaultValue: RISK_CLIENT_ID)
+    static var riskClientID: String
+    
+    @Storage<String>(key: "IDC_ACCESS_KEY_RISK_URL", defaultValue: RISK_URL)
+    static var riskURLString: String
 
     // MARK: Private
 

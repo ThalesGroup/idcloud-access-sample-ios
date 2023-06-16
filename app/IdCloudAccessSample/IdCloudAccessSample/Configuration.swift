@@ -6,68 +6,28 @@
 // swiftlint:disable line_length syntactic_sugar
 import Foundation
 
+//  ** WARNING **
+//  The application Settings will be initialized with the values provided here.
+//  Once modifications have been made in the Settings UI, modifications to the Configurations here would no longer be reflected for that particular setting.
+
 // MARK: Open ID Connect
-fileprivate let IDP_URL: String = "<#T##String#>"
-fileprivate let REDIRECT_URL: String = "<#T##String#>"
-fileprivate let CLIENT_ID: String = "<#T##String#>"
-fileprivate let CLIENT_SECRET: String? = nil
+let IDP_URL: String = "<#T##String#>"
+let REDIRECT_URL: String = "<#T##String#>"
+let CLIENT_ID: String = "<#T##String#>"
+let CLIENT_SECRET: String? = "<#T##String#>"
 
 // MARK: Protector FIDO
-fileprivate let MS_URL: String = "<#T##String#>"
-fileprivate let TENANT_ID: String = "<#T##String#>"
-fileprivate let PUBLIC_KEY_EXPONENT: Array<CUnsignedChar> = [<#T##CUnsignedChar#>]
-fileprivate let PUBLIC_KEY_MODULUS: Array<CUnsignedChar> = [<#T##CUnsignedChar#>]
+let MS_URL: String = "<#T##String#>"
+let TENANT_ID: String = "<#T##String#>"
+let PUBLIC_KEY_EXPONENT: Array<CUnsignedChar> = [<#T##CUnsignedChar#>]
+let PUBLIC_KEY_MODULUS: Array<CUnsignedChar> = [<#T##CUnsignedChar#>]
 
 // MARK: IdCloud Risk
-fileprivate let ND_URL: String = "<#T##String#>"
-fileprivate let RISK_CLIENT_ID: String = "<#T##String#>"
-fileprivate let RISK_URL: String = "<#T##String#>"
+let ND_URL: String = "<#T##String#>"
+let RISK_CLIENT_ID: String = "<#T##String#>"
+let RISK_URL: String = "<#T##String#>"
 
 struct Configuration {
-    static var idpURL: URL {
-        return URL(string: IDP_URL)!
-    }
-
-    static var redirectURL: URL {
-        return URL(string: REDIRECT_URL)!
-    }
-
-    static var clientID: String {
-        return CLIENT_ID
-    }
-
-    static var clientSecret: String? {
-        return CLIENT_SECRET
-    }
-
-    static var msURL: String {
-        return MS_URL
-    }
-
-    static var tenantID: String {
-        return TENANT_ID
-    }
-
-    static var publicKeyModulus: [CUnsignedChar] {
-        return PUBLIC_KEY_MODULUS
-    }
-
-    static var publicKeyExponent: [CUnsignedChar] {
-        return PUBLIC_KEY_EXPONENT
-    }
-
-    static var ndURL: String {
-        return ND_URL
-    }
-
-    static var riskClientID: String {
-        return RISK_CLIENT_ID
-    }
-
-    static var riskURL: String {
-        return RISK_URL
-    }
-
     static func assertConfigurations() {
         precondition(URL(string: IDP_URL) != nil)
         precondition(URL(string: REDIRECT_URL) != nil)

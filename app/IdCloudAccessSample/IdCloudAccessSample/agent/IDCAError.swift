@@ -13,9 +13,11 @@ struct IDCAError: LocalizedError {
     enum Code {
         case unknown
         case cancelled
+        case noPendingEvents
         case accessDenied
         case sca
         case risk
+        case http
     }
 
     let code: Code
@@ -39,6 +41,8 @@ struct IDCAError: LocalizedError {
         switch scaError._code {
         case IDCError.Code.userCancelled.rawValue:
             self.code = .cancelled
+        case IDCError.Code.noPendingEvents.rawValue:
+            self.code = .noPendingEvents
         default:
             self.code = .sca
         }
